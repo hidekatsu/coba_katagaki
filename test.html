@@ -1,1 +1,42 @@
-test
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="pages/js/underscore.js"></script>
+<script src="pages/js/jquery.js">//1.10</script>
+</head>
+    
+<body>
+
+
+<p>あたらしいインターンによる</p>
+<h1>あたらしい肩書き診断</h1>
+<h3>任意の名前を入力してください</h3>
+
+<form>
+	<input type="text" name="uname" size="30" ng-model="AGname">
+	<input type="submit" value="診断する">
+</form>
+
+<h2></h2>
+
+  
+</body>
+<script>    
+
+function WordAry(){
+    var MyArray1 = ["あたらしい","水色の","そよ風","ムキムキ","仏像","粋な","今どきっな","片思いの","桃色"];
+    var MyArray2 = ["系女子","当番","委員","起爆剤","打ち上げ花火","バックパッカー","キラキラ女子","インターン","反逆児","学会会長","案内人","ヒロイン"];
+    return MyArray1[ _.random(0, MyArray1.length - 1) ] + MyArray2[ _.random(0, MyArray2.length - 1) ];
+};
+
+$( "[name='uname']" ).on( "keyup" , function(){
+	$( "h2" ).text("").append( $( this ).val() + "さんのあたらしい肩書きは、　『" + WordAry() + "』　です。" );
+});
+
+
+
+</script>
+
+
+</html>
